@@ -1,0 +1,108 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员注册</title>
+    <link rel="stylesheet" href="CSS/regist.css">
+    <script>
+        function showTips(id,tips) {
+            document.getElementById(id+"span").innerHTML="<span style='color: grey' >"+tips+"</span>";
+        }
+        function check(id,tips) {
+            if(document.getElementById(id).value==""){
+                document.getElementById(id+"span").innerHTML="<span style='color: red' >"+tips+"</span>";
+            }else{
+                document.getElementById(id).innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="container">
+    <div class="LF">
+        <a href="#"><img src="images/logo2.png" alt="logo" id="logo"></a>
+        <a href=""><img src="images/header.png" alt="header"></a>
+    </div>
+    <ul class="RF">
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="#">购物车</a></li>
+    </ul>
+</header>
+    <nav class="container">
+        <ul class="LF">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">手机数码</a></li>
+            <li><a href="#">电脑办公</a></li>
+            <li><a href="#">电脑办公</a></li>
+            <li><a href="#">电脑办公</a></li>
+        </ul>
+        <div class="RF">
+            <input type="text" id="text" placeholder="Search">
+            <input type="submit" value="submit" id="submit">
+        </div>
+    </nav>
+    <section class="form">
+        <form action="#" method="post">
+            <p>会员注册 <span>USE REGISTER</span></p>
+            <table>
+                <tr>
+                    <td>用户名</td>
+                    <td>
+                        <input type="text" placeholder="请输入用户名" class="input" id="username" onfocus="showTips('username','请输入用户名')" onblur="check('username','用户名不能为空')">
+                        <span id="usernamespan"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input type="password" placeholder="请输入密码" class="input" id="password1"></td>
+                </tr>
+                <tr>
+                    <td>确认密码</td>
+                    <td><input type="password" placeholder="请输入确认密码" class="input" id="password2"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" placeholder="Email" class="input" id="email"></td>
+                </tr>
+                <tr>
+                    <td>姓名</td>
+                    <td><input type="text" placeholder="姓名" class="input"></td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td> <input type="radio" name="sex">男<input type="radio" name="sex">女</td>
+                </tr>
+                <tr>
+                    <td>出生日期</td>
+                    <td><input type="date" placeholder="年/月/日" class="input"></td>
+                </tr>
+                <tr>
+                    <td>验证码</td>
+                    <td><input type="text" class="input"></td>
+                </tr>
+                <tr><td><input type="submit" value="注册" class="submit"></td></tr>
+
+            </table>
+
+
+        </form>
+    </section>
+    <footer class="container last">
+        <img src="images/footer.jpg" alt="">
+        <ul>
+            <li class="first"><a href="#">关于我们</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">招贤纳士</a></li>
+            <li><a href="#">法律声明</a></li>
+            <li><a href="#">友情链接</a></li>
+            <li><a href="#">支付方式</a></li>
+            <li><a href="#">配送方式</a></li>
+            <li><a href="#">服务声明</a></li>
+            <li><a href="#">广告声明</a></li>
+        </ul>
+        <p>Copyright © 2005-2016 传智商城 版权所有</p>
+    </footer>
+
+</body>
+</html>
