@@ -24,7 +24,7 @@ public class JdbcUtils {
 			e.printStackTrace();
 		}
 		// 获得连接
-		String url = "jdbc:mysql://localhost:3306/sevenshop";
+		String url = "jdbc:mysql://localhost:3306/sevenshop?characterEncoding=utf8";
 		String user = "root";
 		String password = "muma123123123";
 		Connection conn = DriverManager.getConnection(url, user, password);
