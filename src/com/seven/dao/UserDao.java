@@ -39,4 +39,10 @@ public interface UserDao {
 	 * @return
 	 */
 	public boolean deleteById(Integer id);
+	/**
+	 * 检查用户民是否可用
+	 * @param username
+	 * @return
+	 */	
+	public boolean isExistUsername(String username);
 }

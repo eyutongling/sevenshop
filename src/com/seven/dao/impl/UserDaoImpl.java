@@ -114,6 +114,29 @@ public class UserDaoImpl implements UserDao {
 		
 		return false;
 	}
+	@Override
+	public boolean isExistUsername(String  username) {
+		Connection conn = null;
+		List<User> list = null;
+		try {
+			conn = JdbcUtils.getConnection();
+			String sql = "select * from user where username=?";
+			Object[] params = {username};
+			list = JdbcUtils.executeQuery(conn, sql, params, new UserRowMapper());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			JdbcUtils.close(conn);
+		}
+		User user=list.get(0);
+		System.out.println(user.getUsername());
+		if (user.getUsername().equals(username)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 	public static void main(String[] args) {
 		UserDaoImpl UDI = new UserDaoImpl();
@@ -130,6 +153,8 @@ public class UserDaoImpl implements UserDao {
 		}else{
 			System.out.println("存在");
 		}
+		System.out.println(UDI.isExistUsername("admin"));
+		
 	}
 
 
